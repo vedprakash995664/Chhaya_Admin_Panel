@@ -101,11 +101,11 @@ const SSM = () => {
   };
  const actionTemplate = (rowData) => (
     <div className="action-icons" style={{ display: 'flex', gap: '0.5rem' }}>
-      <Button
+      {/* <Button
         icon="pi pi-eye"
         className="p-button-rounded p-button-info"
         onClick={() => openViewDialog(rowData)}
-      />
+      /> */}
       <Button
         icon="pi pi-pencil"
         className="p-button-rounded p-button-warning"

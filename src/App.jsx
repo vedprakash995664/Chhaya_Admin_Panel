@@ -5,6 +5,10 @@ import SMM from './Pages/Admin/SSM'
 import Login from './Pages/Admin/Login';
 import StaffHead from './Pages/Admin/StaffHead';
 import Zone from './Pages/Admin/Settings/Zone';
+import Pre from './Pages/Admin/Pre-Visa';
+import Mainpage from './Pages/Admin/Mainpage';
+import FinalVisaOfficer from './Pages/Admin/FinalVisaOfficer';
+import InterviewManager from './Pages/Admin/InterviewManager';
 
 function App() {
   return (
@@ -12,6 +16,12 @@ function App() {
       <Routes>
         {/* Public Login Route */}
         <Route path="/" element={<Login />} />
+
+        <Route path="/dashboard" element={
+          <Dashboard>
+            <Mainpage />
+          </Dashboard>
+        } />
 
         {/* Protected Admin Routes */}
         <Route path="/social-media-manager" element={
@@ -24,15 +34,30 @@ function App() {
             <StaffHead />
           </Dashboard>
         } />
+        <Route path="/interview-manager" element={
+          <Dashboard>
+            <InterviewManager />
+          </Dashboard>
+        } />
+        <Route path="/pre-visa" element={
+          <Dashboard>
+            <Pre />
+          </Dashboard>
+        } />
+        <Route path="/final-visa" element={
+          <Dashboard>
+            <FinalVisaOfficer />
+          </Dashboard>
+        } />
 
 
 
 
 
 
-          {/* //inner  side */}
+        {/* //inner  side */}
 
-          
+
         <Route path="/settings/zone" element={
           <Dashboard>
             <Zone />

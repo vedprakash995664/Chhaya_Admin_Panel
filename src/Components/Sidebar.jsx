@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
 import './StyleCss/Sidebar.css';
 import {
-  FaHome, FaImage, FaVideo, FaCubes, FaCog, FaUserPlus, FaQuestion,
-  FaChevronDown, FaChevronRight, FaFilm, FaVideoSlash, FaYoutube
+  FaHome, FaImage, FaCubes ,
+  FaChevronDown, FaChevronRight, FaFilm,
 } from 'react-icons/fa';
+
+import { FiSettings } from "react-icons/fi";
+
 import { useNavigate } from 'react-router-dom';
 
 export default function Sidebar({ isOpen }) {
@@ -14,15 +17,16 @@ export default function Sidebar({ isOpen }) {
   const menu = [
     { icon: <FaHome />, label: 'Dashboard', path: '/dashboard' },
     { icon: <FaCubes />, label: 'Social Media Manager', path: '/social-media-manager' },
-    { icon: <FaImage />, label: 'Calling Team', path: '/callingTeam' },
+    { icon: <FaCubes />, label: 'Staff Head', path: '/staffHead' }, 
+    { icon: <FaCubes />, label: 'Interview Manager', path: '/interview-manager' }, 
+    { icon: <FaImage />, label: 'Pre-Visa (Sneha)', path: '/pre-visa' },
+    { icon: <FaImage />, label: 'Final Visa(Shamiksha)', path: '/final-visa' },
     {
-      icon: <FaVideo />, label: 'Settings', dropdown: [
+      icon: <FiSettings />, label: 'Settings', dropdown: [
         { label: 'Zone', icon: <FaFilm />, path: '/settings/zone' },
-        { label: '3D Video', icon: <FaVideoSlash />, path: '/settings/3d' },
-        { label: '4D Video', icon: <FaYoutube />, path: '/settings/4d' }
       ]
     },
-    { icon: <FaCubes />, label: 'Staff Head', path: '/staffHead' },
+ 
   ];
 
   const handleItemClick = (item) => {

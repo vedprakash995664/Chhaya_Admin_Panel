@@ -1,11 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { FaSearch, FaBell, FaEnvelope, FaUserCircle, FaBars } from 'react-icons/fa';
 import './StyleCss/header.css';
+import chhayaLogo from "../../public/logo.jpg"
 
 const Header = ({ toggleSidebar }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const profileRef = useRef();
-
   // Close dropdown if click outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -13,7 +13,6 @@ const Header = ({ toggleSidebar }) => {
         setDropdownOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
@@ -22,25 +21,24 @@ const Header = ({ toggleSidebar }) => {
     <div className="navbar">
       <div className="navbar-left">
         <div className="admin-logo">
-          <img src="public/logo.jpg" alt=""  style={{height:"30px", width:"100%"}}/>
+          <img src={chhayaLogo} alt="chaya"  style={{height:"30px", width:"100%"}}/>
         </div>
         <button className="menu-toggle" onClick={toggleSidebar}>
           <FaBars />
         </button>
         <div className="search-bar">
-          <FaSearch className="search-icon" />
-          <input type="text" placeholder="Search..." />
+          <span className='Heading'>Welcome Back Admin !!</span>
         </div>
       </div>
       <div className="navbar-right">
-        <div className="nav-icon">
+        {/* <div className="nav-icon">
           <FaBell />
           <span className="notification-badge">3</span>
         </div>
         <div className="nav-icon">
           <FaEnvelope />
           <span className="notification-badge">5</span>
-        </div>
+        </div> */}
 
         <div
           className="user-profile"

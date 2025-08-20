@@ -30,7 +30,7 @@ const Login = () => {
         toast.success('Login successful!');
         setInterval(() => {
 
-          navigate('/employees')
+          navigate('/dashboard')
         }, 2500)
       } else {
         toast.error('Invalid login response');
